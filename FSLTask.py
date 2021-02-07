@@ -5,7 +5,7 @@ import numpy as np
 
 # ========================================================
 #   Usefull paths
-_datasetFeaturesFiles = {"CUB": "./checkpoints/CUB/WideResNet28_10_S2M2_R/last/novel_features.plk"}
+_datasetFeaturesFiles = {"CUB": "./ckpt/CUB/WideResNet28_10_S2M2_R/last/novel_features.plk"}
 _cacheDir = "./cache"
 _maxRuns = 10000
 _min_examples = -1

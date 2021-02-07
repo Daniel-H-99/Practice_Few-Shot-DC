@@ -22,7 +22,36 @@ def parse_args(script):
         parser.add_argument('--alpha'       , default=2.0, type=int, help='for S2M2 training ')
     elif script == 'test':
         parser.add_argument('--num_classes' , default=200, type=int, help='total number of classes')    
-      
+    elif script == 'eval':
+        parser.add_argument(
+            '--path',
+            type=str,
+            default=".")
+        parser.add_argument(
+            '--result_dir',
+            type=str,
+            default='results')
+        parser.add_argument(
+            '--ckpt_dir',
+            type=str,
+            default="ckpt")
+        parser.add_argument(
+            '--name',
+            type=str,
+            default="train")
+        parser.add_argument(
+            '--k',
+            type=int,
+            default=2)
+        parser.add_argument(
+            '--sampling',
+            type=int,
+            default=750)
+        parser.add_argument(
+            '--lamda',
+            type=float,
+            default=0.5)
+
     return parser.parse_args()
 
 

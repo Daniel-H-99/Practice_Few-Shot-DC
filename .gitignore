@@ -4,4 +4,7 @@
 /chkpt
 /dataset
 /results
+/cache
+/checkpoints
+/results
 *.ipynb

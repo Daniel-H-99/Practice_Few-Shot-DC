@@ -103,9 +103,13 @@ def mixup_data(x, y, lam):
     
 class WideResNet(nn.Module):
     def __init__(self, depth=28, widen_factor=10, num_classes= 200, loss_type = 'dist', per_img_std = False, stride = 1, dropRate = 0.5):
-        assert((depth - 4) % 6 == 0)
+        dropRate = 0.5
+        flatten = True
         super(WideResNet, self).__init__()
-    
+        nChannels = [16, 16*widen_factor, 32*widen_factor, 64*widen_factor]
+        assert((depth - 4) % 6 == 0)
+        n = (depth - 4) / 6
+        block = BasicBlock
         # 1st conv before any network block
         self.conv1 = nn.Conv2d(3, nChannels[0], kernel_size=3, stride=1,
                                padding=1, bias=False)
